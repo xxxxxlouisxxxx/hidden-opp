@@ -7,7 +7,7 @@ import { Sparkline } from "./Sparkline";
 import { WatchButton } from "./WatchButton";
 
 export function OpportunityCard({ item }: { item: Opportunity }) {
-  const hot = item.scores.hidden >= 72;
+  const hot = item.scores.hidden >= 75;
 
   return (
     <article className={`border bg-panel ${hot ? "border-volt/40" : "border-line"}`}>
@@ -17,7 +17,7 @@ export function OpportunityCard({ item }: { item: Opportunity }) {
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-mist">
               {REGION_LABEL[item.region]} · {PLAY_LABEL[item.playType]} · {item.brand}
             </p>
-            <h2 className="mt-2 font-display text-2xl leading-none tracking-tight text-paper">
+            <h2 className="mt-2 pr-2 text-xl font-bold leading-snug text-paper sm:text-2xl">
               {item.queryZh}
             </h2>
             <p className="mt-2 font-mono text-xs text-mist">{item.query}</p>

@@ -10,7 +10,9 @@ export default function MethodologyPage() {
       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-volt">
         Why these features, and only these
       </p>
-      <h1 className="mt-3 font-display text-5xl tracking-tight">第一版做咩、唔做咩</h1>
+      <h1 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">
+        第一版做咩、唔做咩
+      </h1>
       <p className="mt-5 text-base leading-7 text-paper/80">
         Hidden Opp 嘅假設好窄：運動波鞋市場入面，真正難發現嘅生意，通常唔係最熱嘅 Dunk
         關鍵詞，而係「有人搜、供應薄、Google 未捲、AI 答案亦引用唔到」嘅巷。所以 MVP
@@ -18,7 +20,7 @@ export default function MethodologyPage() {
       </p>
 
       <section className="mt-10">
-        <h2 className="font-display text-3xl">入面有嘅功能</h2>
+        <h2 className="text-3xl font-bold">入面有嘅功能</h2>
         <ol className="mt-4 list-decimal space-y-4 pl-5 text-paper/85">
           <li>
             <strong className="text-paper">機會雷達：</strong>
@@ -48,7 +50,7 @@ export default function MethodologyPage() {
       </section>
 
       <section className="mt-10">
-        <h2 className="font-display text-3xl">刻意唔做</h2>
+        <h2 className="text-3xl font-bold">刻意唔做</h2>
         <ul className="mt-4 list-disc space-y-3 pl-5 text-paper/80">
           <li>帳戶、付費牆、團隊 workspace</li>
           <li>即時爬蟲、Ahrefs / DataForSEO 真 API（而家用樣本數據）</li>
@@ -61,9 +63,15 @@ export default function MethodologyPage() {
       </section>
 
       <section className="mt-10">
-        <h2 className="font-display text-3xl">隱市分數</h2>
+        <h2 className="text-3xl font-bold">隱市分數</h2>
         <p className="mt-4 leading-7 text-paper/80">
-          <code className="font-mono text-volt">hidden = 0.32·demand + 0.28·seoGap + 0.28·geoGap + 0.12·trend</code>
+          <code className="font-mono text-sm text-volt">
+            hidden = 0.30·demand + 0.25·seoGap + 0.30·geoGap + 0.15·trend
+          </code>
+        </p>
+        <p className="mt-3 leading-7 text-paper/80">
+          另外：90 日下跌扣 10；關鍵詞難度 ≥40 扣 8；AI 佔有率 ≥40 扣 8。用來把 Dunk Panda
+          呢類已經唔隱嘅熱詞壓下去。
         </p>
         <ul className="mt-4 space-y-3 text-paper/80">
           <li>
@@ -74,8 +82,8 @@ export default function MethodologyPage() {
             <strong className="text-paper">seoGap</strong> 由低難度同低 SERP 飽和組成。
           </li>
           <li>
-            <strong className="text-paper">geoGap</strong> 由低 AI 佔有率加分；ChatGPT /
-            Perplexity / AI Overview 空白再加權。呢個係 MVP 最想驗證嘅訊號。
+            <strong className="text-paper">geoGap</strong> 由低 AI 佔有率組成；ChatGPT /
+            Perplexity / AI Overview 空白會再加權。呢個係 MVP 最想驗證嘅訊號。
           </li>
           <li>
             <strong className="text-paper">trend</strong> 獎勵 90 日上升，懲罰已經見頂嘅熱詞。
@@ -84,7 +92,7 @@ export default function MethodologyPage() {
       </section>
 
       <section className="mt-10">
-        <h2 className="font-display text-3xl">數據現況</h2>
+        <h2 className="text-3xl font-bold">數據現況</h2>
         <p className="mt-4 leading-7 text-paper/80">
           而家 24 條機會係編輯過嘅樣本，用來把產品形狀做實，並示範正例（Vomero 平替、Omni
           9 GEO）同負例（Dunk Panda、Samba 主詞）。下一版先把 SEO 接到真實搜尋 API，把 GEO

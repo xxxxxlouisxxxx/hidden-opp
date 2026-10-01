@@ -25,7 +25,7 @@ export function SiteHeader() {
             波鞋隱市雷達
           </span>
         </Link>
-        <nav className="flex items-center gap-1 text-[12px] uppercase tracking-[0.16em]">
+        <nav className="flex items-center gap-0.5 text-[11px] uppercase tracking-[0.14em] sm:gap-1 sm:text-[12px] sm:tracking-[0.16em]">
           {links.map((link) => {
             const active =
               link.href === "/"

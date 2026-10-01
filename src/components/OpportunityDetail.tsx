@@ -28,7 +28,7 @@ export function OpportunityDetail({ item }: { item: Opportunity }) {
       </p>
       <div className="mt-3 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <h1 className="font-display text-4xl leading-none tracking-tight text-paper sm:text-6xl">
+          <h1 className="max-w-3xl text-3xl font-bold leading-tight text-paper sm:text-5xl">
             {item.queryZh}
           </h1>
           <p className="mt-3 font-mono text-sm text-mist">{item.query}</p>
@@ -61,7 +61,9 @@ export function OpportunityDetail({ item }: { item: Opportunity }) {
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-volt">
           建議打法
         </p>
-        <h2 className="mt-2 font-display text-3xl text-paper">{item.play.title}</h2>
+        <h2 className="mt-2 text-2xl font-bold leading-snug text-paper sm:text-3xl">
+          {item.play.title}
+        </h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-paper/85">
           {item.play.whyHidden}
         </p>
@@ -77,7 +79,7 @@ export function OpportunityDetail({ item }: { item: Opportunity }) {
         <section className="border border-line bg-panel p-6">
           <div className="flex items-start justify-between">
             <div>
-              <h3 className="font-display text-2xl">SEO</h3>
+              <h3 className="font-display text-2xl tracking-tight">SEO</h3>
               <p className="mt-1 text-sm text-mist">Google 需求同競爭密度</p>
             </div>
             <Sparkline series={item.trendSeries} />

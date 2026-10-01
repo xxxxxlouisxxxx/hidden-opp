@@ -36,7 +36,7 @@ export default async function OpportunityPage({
       <OpportunityDetail item={item} />
       {related.length > 0 ? (
         <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
-          <h2 className="font-display text-2xl">相鄰機會</h2>
+          <h2 className="text-2xl font-bold">相鄰機會</h2>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {related.map((entry) => (
               <Link
@@ -47,7 +47,7 @@ export default async function OpportunityPage({
                 <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-mist">
                   隱市 {entry.scores.hidden}
                 </p>
-                <p className="mt-2 font-display text-xl leading-tight">
+                <p className="mt-2 text-lg font-bold leading-snug">
                   {entry.queryZh}
                 </p>
                 <p className="mt-2 text-sm text-mist">{entry.play.title}</p>

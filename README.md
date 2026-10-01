@@ -20,8 +20,10 @@ MVP 只驗證一個問題：人會唔會用 SEO × GEO 分數，去決定跟邊�
 計分：
 
 ```
-hidden = 0.32·demand + 0.28·seoGap + 0.28·geoGap + 0.12·trend
+hidden = 0.30·demand + 0.25·seoGap + 0.30·geoGap + 0.15·trend
 ```
+
+下跌、高難度、高 AI 佔有率會扣分，避免把熱詞當成隱市。
 
 詳情見 app 入面 `/methodology`。
 

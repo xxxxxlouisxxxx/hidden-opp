@@ -20,7 +20,7 @@ export function WatchButton({
         event.stopPropagation();
         toggle(id);
       }}
-      className={`border px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors ${
+      className={`whitespace-nowrap border px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors ${
         saved
           ? "border-volt bg-volt text-ink"
           : "border-line text-mist hover:border-paper/40 hover:text-paper"

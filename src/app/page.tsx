@@ -13,13 +13,13 @@ export default function Home() {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-volt">
             MVP · Sample dataset · HK / TW / SG
           </p>
-          <h1 className="mt-3 font-display text-5xl leading-[0.9] tracking-tight sm:text-7xl">
+          <h1 className="mt-3 text-4xl font-bold leading-[1.12] sm:text-6xl">
             搵波鞋市場
-            <span className="block text-volt">未被人佔領嘅巷。</span>
+            <span className="mt-1 block text-volt">未被人佔領嘅巷。</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-paper/80">
             第一版只做一件事：把 SEO 搜尋需求，對上 GEO（ChatGPT / Perplexity / AI
-            Overview）同本地供應缺口，排出隱市分數。唔做社群、唔做交易、唔接付費，先證明呢個雷達值唔值得睇。
+            Overview）同本地供應缺口，排出隱市分數。唔做社群、交易、付費牆。先證明呢個雷達值唔值得睇。
           </p>
         </div>
         <dl className="grid grid-cols-2 gap-3">

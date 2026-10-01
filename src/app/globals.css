@@ -15,7 +15,7 @@
   --color-mist: #9c968a;
   --color-line: #2c2a26;
   --color-panel: #141311;
-  --font-sans: var(--font-ibm), var(--font-noto), ui-sans-serif, system-ui;
+  --font-sans: var(--font-noto), var(--font-ibm), ui-sans-serif, system-ui;
   --font-display: var(--font-syne), var(--font-noto), sans-serif;
   --font-mono: var(--font-ibm-mono), ui-monospace, monospace;
 }

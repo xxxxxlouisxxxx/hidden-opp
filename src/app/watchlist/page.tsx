@@ -14,7 +14,7 @@ export default function WatchlistPage() {
       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-volt">
         Local watchlist
       </p>
-      <h1 className="mt-2 font-display text-5xl tracking-tight">觀察名單</h1>
+      <h1 className="mt-2 text-4xl font-bold sm:text-5xl">觀察名單</h1>
       <p className="mt-3 max-w-xl text-paper/75">
         存喺你瀏覽器，未做帳戶。MVP 用嚟驗證：人會唔會把機會收藏，而唔係一睇完就走。
       </p>
