@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <dl className="grid grid-cols-2 gap-3">
           <Stat label="樣本機會" value={String(stats.total)} />
-          <Stat label="隱市 ≥70" value={String(stats.hidden)} />
+          <Stat label="隱市 ≥80" value={String(stats.hidden)} />
           <Stat label="升勢詞" value={String(stats.rising)} />
           <Stat label="GEO 大缺口" value={String(stats.geoOpen)} />
           <Stat label="平均隱市" value={String(stats.avgHidden)} />

@@ -26,7 +26,7 @@ export function WatchButton({
           : "border-line text-mist hover:border-paper/40 hover:text-paper"
       }`}
     >
-      {compact ? (saved ? "已盯" : "盯住") : saved ? "已加入觀察" : "加入觀察名單"}
+      {compact ? (saved ? "移出" : "盯住") : saved ? "移出觀察" : "加入觀察"}
     </button>
   );
 }

@@ -10,34 +10,44 @@ import {
 
 const STORAGE_KEY = "lane-watchlist";
 const EMPTY: string[] = [];
-const listeners = new Set<() => void>();
-let memory: string[] = EMPTY;
-let didLoad = false;
+const CHANGE_EVENT = "lane-watchlist";
 
-function emit() {
-  for (const listener of listeners) listener();
-}
+let cachedRaw: string | null = null;
+let cachedIds: string[] = EMPTY;
 
-function loadFromStorage() {
-  if (didLoad || typeof window === "undefined") return;
-  didLoad = true;
+function parseList(raw: string | null): string[] {
+  if (!raw) return EMPTY;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    memory = raw ? (JSON.parse(raw) as string[]) : EMPTY;
+    const parsed = JSON.parse(raw) as unknown;
+    return Array.isArray(parsed)
+      ? parsed.filter((id): id is string => typeof id === "string")
+      : EMPTY;
   } catch {
-    memory = EMPTY;
+    return EMPTY;
   }
 }
 
+function snapshotFromStorage() {
+  if (typeof window === "undefined") return EMPTY;
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw === cachedRaw) return cachedIds;
+  cachedRaw = raw;
+  cachedIds = parseList(raw);
+  return cachedIds;
+}
+
 function subscribe(listener: () => void) {
-  loadFromStorage();
-  listeners.add(listener);
-  return () => listeners.delete(listener);
+  const onChange = () => listener();
+  window.addEventListener("storage", onChange);
+  window.addEventListener(CHANGE_EVENT, onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(CHANGE_EVENT, onChange);
+  };
 }
 
 function getSnapshot() {
-  loadFromStorage();
-  return memory;
+  return snapshotFromStorage();
 }
 
 function getServerSnapshot() {
@@ -45,15 +55,17 @@ function getServerSnapshot() {
 }
 
 function persist(next: string[]) {
-  memory = next;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-  emit();
+  const raw = JSON.stringify(next);
+  localStorage.setItem(STORAGE_KEY, raw);
+  cachedRaw = raw;
+  cachedIds = next;
+  window.dispatchEvent(new Event(CHANGE_EVENT));
 }
 
 function toggleId(id: string) {
-  loadFromStorage();
+  const current = snapshotFromStorage();
   persist(
-    memory.includes(id) ? memory.filter((item) => item !== id) : [...memory, id],
+    current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
   );
 }
 

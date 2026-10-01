@@ -1130,7 +1130,7 @@ export function uniqueBrands() {
 }
 
 export function radarStats() {
-  const hidden = opportunities.filter((item) => item.scores.hidden >= 70).length;
+  const hidden = opportunities.filter((item) => item.scores.hidden >= 80).length;
   const rising = opportunities.filter((item) => item.volumeTrendPct >= 20).length;
   const geoOpen = opportunities.filter((item) => item.scores.geoGap >= 70).length;
   const avg =
